@@ -1,0 +1,185 @@
+/* Estilos para o modo claro (padrão) */
+header {
+    background-color: #1e1e1e;
+    font-family: 'Arial', sans-serif;
+}
+
+body, header, footer, .card, .form-control {
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+}
+
+@keyframes fadeInDark {
+    from {
+        opacity: 0;
+        transform: scale(0.98); /* Pequeno zoom out */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Zoom normal */
+    }
+}
+
+body {
+    animation: fadeInLight 1s ease-out forwards;
+}
+
+@keyframes fadeInLight {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+#toggleMode {
+    background-color: #2d2f31; /* Cor de fundo inicial (azul) */
+    color: #fff; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito no texto */
+    cursor: pointer; /* Cursor de mãozinha para interação */
+    transition: all 0.3s ease; /* Transições suaves para todas as propriedades */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+#toggleMode:hover {
+    background-color: #2d2f31; /* Cor mais escura quando passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+    transform: translateY(-2px); /* Levanta o botão quando o mouse passa */
+}
+
+#toggleMode:focus {
+    outline: none; /* Remove a borda padrão ao focar */
+    box-shadow: 0 0 0 3px rgba(206, 209, 213, 0.5); /* Adiciona uma borda azul ao focar */
+}
+
+.bg-dark-custom {
+    background-color: #1e1e1e;
+    color: #ffffff
+}
+
+.card {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Cor padrão do fundo do card */
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card */
+    background-color: #f1f1f1; /* Muda a cor de fundo ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.form-control {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: #1e1e1e; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    animation: fadeInDark 1s ease-out forwards;
+    opacity: 0.95;
+}
+
+body.dark-mode header {
+    background-color: #333; /* Cor de fundo escuro para o header */
+}
+
+body.dark-mode footer {
+    background-color: #444; /* Cor escura para o footer */
+}
+
+body.dark-mode .form-control {
+    background-color: #333; /* Fundo escuro nos inputs */
+    color: #e0e0e0; /* Texto claro nos inputs */
+    border: 1px solid #555; /* Borda mais suave */
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e; /* Fundo mais escuro para os cards */
+    color: #e0e0e0; /* Texto claro nos cards */
+}
+
+body.dark-mode .card:hover {
+    background-color: #444; /* Cor de fundo ao passar o mouse no modo dark */
+    transform: scale(1.05); /* Mesmo efeito de aumento no modo escuro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no modo escuro */
+}
+
+.bg-light {
+    background-color: #f8f9fa !important; /* Cor de fundo clara para projetos */
+}
+
+body.dark-mode .bg-light {
+        background-color: #1e1e1e !important;  /* Cor de fundo escura para projetos */
+}
+
+#projectCarousel {
+    width: 65%;  /* Limita a largura do carrossel a 70% da tela */
+    margin: 0 auto;
+}
+
+/* Fundo transparente para o carrossel e itens */
+.carousel-item {
+    background-color: transparent;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: transform 0.7s ease-in-out
+}
+
+.carousel-item.active {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Legendas do carrossel */
+.carousel-caption {
+    color: #333; /* Cor padrão para as legendas */
+}
+
+body.dark-mode .carousel-caption {
+    color: #e0e0e0; /* Cor clara para as legendas no modo escuro */
+}
+
+/* Indicadores do carrossel */
+.carousel-indicators li {
+    background-color: #333; /* Indicador padrão */
+}
+
+body.dark-mode .carousel-indicators li {
+    background-color: #e0e0e0; /* Indicador claro no modo escuro */
+}
+
+/* Indicador ativo */
+.carousel-indicators .active {
+    background-color: #007bff; /* Cor para o indicador ativo */
+}
+
+body.dark-mode .carousel-indicators .active {
+    background-color: #007bff; /* Mantém a cor do indicador ativo no modo escuro */
+}
+
+/* Controles do carrossel (setas) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0); /* Cor padrão para as setas */
+}
+
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+    filter: invert(1); /* Setas claras no modo escuro */
+}
